@@ -1,0 +1,11 @@
+<% @painting.errors.full_messages.each do |message| %>
+<%= message %>
+<% end %>
+
+<%= form_for(@painting) do |f| %>
+<%=f.label :name %>
+<%=f.text_field :name %>
+<%=f.label :artist %>
+<%=collection_select(:painting, :artist_id, @artists, :id, :name) %>
+<%=f.submit "Add Painting" %>
+<% end %>

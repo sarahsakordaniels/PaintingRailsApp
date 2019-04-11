@@ -1,0 +1,7 @@
+Artist Form
+<%=form_for @artist do |f| %>
+Name: <%= f.text_field :name %>
+Style: <%= f.text_field :style %> <br>
+<%= f.submit "Update Artist" %>
+<%end%>
+<%= button_to "Delete Artist", artist_path(@artist), method: :delete %>

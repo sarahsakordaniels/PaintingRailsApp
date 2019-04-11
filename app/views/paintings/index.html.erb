@@ -1,0 +1,11 @@
+<h1>Paintings</h1>
+<%= form_tag "/search_painting", method: :get do %>
+<%= text_field_tag :search_term %>
+<%= submit_tag "Search Paintings" %>
+<%end%>
+
+<ul>
+<%@paintings.each do |painting| %>
+  <li><%=link_to painting.name, painting_path(painting)%>, <%=link_to painting.artist.name, artist_path(painting.artist)%>, <%= link_to "Edit", edit_painting_path(painting)%></li>
+  <%end%>
+</ul>

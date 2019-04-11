@@ -1,0 +1,20 @@
+<%= form_tag "/search", method: :get do %>
+<%= text_field_tag :search_term %>
+<%= submit_tag "Search" %>
+<%end%>
+
+
+<% @artists.each do |artist| %>
+Artist: <%=link_to artist.name, artist_path(artist) %>
+Style: <%= artist.style %>
+<%=link_to "Edit", edit_artist_path(artist) %>
+<br>
+<%end%>
+<br><br>
+<%= link_to "Add an Artist", new_artist_path %>
+<br><br>
+
+<h3>Here's a list of Picasso's favorite Omelets</h3>
+<% @data.each do |data| %>
+<li><%= data["title"] %></li>
+<% end %>

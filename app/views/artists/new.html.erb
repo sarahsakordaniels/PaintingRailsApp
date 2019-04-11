@@ -1,0 +1,6 @@
+Artist Form
+<%=form_for @artist do |f| %>
+Name: <%= f.text_field :name %>
+Style: <%= f.text_field :style %> <br>
+<%= f.submit "Add an Artist" %>
+<%end%>
